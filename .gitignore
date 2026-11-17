@@ -4,3 +4,6 @@
 
 # local run folder, not pushed
 /Project Run/
+
+# original full-size photos (resized copies are in docs/images)
+/screenshots and pics/

@@ -1,0 +1,6 @@
+# no PDFs anywhere in the repo
+*.pdf
+*.PDF
+
+# local run folder, not pushed
+/Project Run/

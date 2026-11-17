@@ -152,12 +152,5 @@ Laser-Royale/
 └── docs/images/                              # pictures used in this README
 ```
 
-## 👥 Team
 
-Mustafa Al-Abdullah · Jehad Barham · Rizwanul Asim · Mohammed Tonse
 
-Instructor: Mr. Ali Reza Sajun
-
----
-
-<p align="center"><i>Aim. Fire. Reload. Survive.</i></p>

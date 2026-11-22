@@ -73,4 +73,3 @@ The status line is sent after every event and once a second. It carries **runnin
 - **Feedback:** `StatusLed`, `Buzzer`, `VibrationMotor`, all through the `FeedbackDevice` interface.
 - **Output:** `IREmitter` sends the IR shot, `XBeeRadio` handles the ZigBee link.
 
-Nothing in the feedback uses `delay()`, so the blaster never stops listening for hits.

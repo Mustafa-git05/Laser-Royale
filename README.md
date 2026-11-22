@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>A two-player wireless laser tag game.</b><br>
-  Arduino Uno blasters · IR shots · ZigBee (XBee) · Java live scoreboard
+  Arduino Uno blasters | IR shots | ZigBee (XBee) | Java live scoreboard
 </p>
 
 <p align="center">

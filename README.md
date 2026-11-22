@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  COE 421L – Computer Systems Engineering Lab · American University of Sharjah · Fall 2026
+  COE 421L – Computer Systems Engineering Lab - American University of Sharjah Fall 2026
 </p>
 
 ---

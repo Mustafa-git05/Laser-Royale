@@ -10,13 +10,13 @@ java/
 
 ## Requirements
 - **Eclipse IDE** for Java.
-- **Java SE 20 or below** as the execution environment (same as Lab 8).
+- **Java SE 19 or below** as the execution environment.
 - The **XBee Explorer USB** with the coordinator XBee (22 RX), plugged into the PC.
 
 ## 1. Create the project
 1. Launch Eclipse.
 2. **File > New > Java Project**, name it `LaserRoyaleController`.
-3. Make sure the execution environment selected is **JavaSE-20 or below**.
+3. Make sure the execution environment selected is **JavaSE-19 or below**.
 4. If Eclipse asks to create `module-info.java`, click **Don't Create**.
 5. Click **Finish**.
 
@@ -25,7 +25,7 @@ java/
 2. They must sit directly in `src` ("default package"), not inside another folder.
 
 ## 3. Add the Serial Library (jssc-2.9.6.jar)
-Same steps as Lab 8, Exercise 1:
+
 
 1. Right-click your project in the **Project Explorer > Build Path > Configure Build Path…**
 2. Select **Libraries > Classpath > Add External JARs…**

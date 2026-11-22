@@ -7,20 +7,6 @@
   Upload this SAME file to both guns. Only change PLAYER_ID below:
     gun 1 -> PLAYER_ID = 1        gun 2 -> PLAYER_ID = 2
 
-  Wiring (see projectNew/BUILD_GUIDE.md and the images folder):
-    D2  <- IR receiver KY-022  S   (receiver + 47 uF capacitor are on a mini
-           breadboard on the player's vest, 3-wire cable to the gun: S, +, -)
-    D4  <- trigger button module OUT
-    D5  -> LilyPad Vibe Board  +
-    D6  -> 1 kohm -> GREEN LED -> GND
-    D7  -> 1 kohm -> RED LED   -> GND
-    D8  -> active buzzer module I/O   (module is LOW-triggered)
-    D9  -> 1 kohm -> BC107B base   (TSAL6100 IR emitter driver)
-    D10 <- LilyPad XBee  tx      (XBee data into the Uno)
-    D11 -> LilyPad XBee  rx      (Uno data out to the XBee)
-    D12 <- reload sensor (TCRT5000 reflective IR module) OUT, looks into
-           the magazine slot. Magazine in = white patch in front of it.
-
   Game rules on the gun:
     - Press the trigger = one blast. The blast is 3 copies of an NEC IR
       frame: address = my player ID, command = shot number (1..200).
@@ -44,10 +30,6 @@
                 so a lost message is fixed by the next one)
     PC  -> gun  <S,10>   start a new match with 10 health
                 <W,2>    match over, player 2 won (win / lose sound)
-
-  USB Serial Monitor (9600) for testing:  f = fire,  s = print status,
-      n = new match,  r = pretend the magazine is pulled out / pushed in
-      (only when RELOAD_SENSOR_FITTED is false, for bench tests)
   =====================================================================
 */
 
@@ -433,6 +415,8 @@ public:
     carrierOff();
   }
 };
+
+
 
 // =====================================================================
 // XBEE RADIO  (LilyPad XBee board on SoftwareSerial D10/D11)

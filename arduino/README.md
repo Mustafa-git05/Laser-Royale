@@ -66,14 +66,6 @@ Power the Uno from a **USB power bank** into its USB port (not the round barrel 
 
 The status line is sent after every event and once a second. It carries **running totals**, so a lost message is fixed by the next one. `mag` = 1 magazine in, 0 out. `check` = the sum of the other 7 numbers, so the PC can reject damaged messages.
 
-## Testing from the Serial Monitor (9600 baud)
-
-| Key | Action |
-|---|---|
-| `f` | Fire one shot |
-| `s` | Print the status (health, ammo, magazine, reloads, IR noise count) |
-| `n` | Start a new match |
-| `r` | Pretend the magazine is pulled out / pushed in (only when `RELOAD_SENSOR_FITTED = false`) |
 
 ## Code structure
 - `PlayerNode` runs the blaster.

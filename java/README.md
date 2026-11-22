@@ -11,7 +11,7 @@ java/
 ## Requirements
 - **Eclipse IDE** for Java.
 - **Java SE 19 or below** as the execution environment.
-- The **XBee Explorer USB** with the coordinator XBee (22 RX), plugged into the PC.
+- The **XBee Explorer USB** with the coordinator XBee (RX), plugged into the PC.
 
 ## 1. Create the project
 1. Launch Eclipse.
@@ -35,7 +35,7 @@ java/
 The project should now show **Referenced Libraries > jssc-2.9.6.jar**, and no file should have a red **X**.
 
 ## 4. Find the XBee Explorer's COM port
-1. Plug the XBee Explorer (with 22 RX) into the PC.
+1. Plug the XBee Explorer (with RX) into the PC.
 2. Open **Device Manager > Ports (COM & LPT)**, or **Arduino IDE > Tools > Port**, and note the port, e.g. `COM7`.
 3. **Close the Arduino Serial Monitor** if it's open on that port. Only one program can use a COM port at a time.
 

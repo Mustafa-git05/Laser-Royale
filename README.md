@@ -125,6 +125,7 @@ Nothing uses `delay()` in the feedback, so the gun never stops listening for hit
 ## 🚀 Getting started
 
 ### 1. Arduino (both blasters)
+Full wiring, settings and test keys are in **[arduino/README.md](arduino/README.md)**. In short:
 1. Install the **IRremote** library (by ArminJo, 4.x) from the Arduino Library Manager.
 2. Open `arduino/LaserRoyale_Gun/LaserRoyale_Gun.ino`.
 3. Set `PLAYER_ID = 1`, then upload to blaster 1 (**Board: Arduino Uno**).
@@ -144,7 +145,8 @@ Full steps are in **[java/README.md](java/README.md)**. In short:
 ```
 Laser-Royale/
 ├── arduino/
-│   └── LaserRoyale_Gun/LaserRoyale_Gun.ino   # code for both blasters
+│   ├── LaserRoyale_Gun/LaserRoyale_Gun.ino   # code for both blasters
+│   └── README.md                             # wiring, settings and upload guide
 ├── java/
 │   ├── src/                                  # Java game controller
 │   ├── lib/jssc-2.9.6.jar                    # serial port library

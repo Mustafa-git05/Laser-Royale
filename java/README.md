@@ -5,18 +5,18 @@ The Java program on the PC that receives the two guns' messages over ZigBee, run
 ```
 java/
   src/   all the Java source files (default package)
-  lib/   jssc-2.9.6.jar – the serial port library (same as Lab 8)
+  lib/   jssc-2.9.6.jar – the serial port library 
 ```
 
 ## Requirements
 - **Eclipse IDE** for Java.
-- **Java SE 20 or below** as the execution environment (same as Lab 8).
-- The **XBee Explorer USB** with the coordinator XBee (22 RX), plugged into the PC.
+- **Java SE 19 or below** as the execution environment.
+- The **XBee Explorer USB** with the coordinator XBee (RX), plugged into the PC.
 
 ## 1. Create the project
 1. Launch Eclipse.
 2. **File > New > Java Project**, name it `LaserRoyaleController`.
-3. Make sure the execution environment selected is **JavaSE-20 or below**.
+3. Make sure the execution environment selected is **JavaSE-19 or below**.
 4. If Eclipse asks to create `module-info.java`, click **Don't Create**.
 5. Click **Finish**.
 
@@ -25,7 +25,7 @@ java/
 2. They must sit directly in `src` ("default package"), not inside another folder.
 
 ## 3. Add the Serial Library (jssc-2.9.6.jar)
-Same steps as Lab 8, Exercise 1:
+
 
 1. Right-click your project in the **Project Explorer > Build Path > Configure Build Path…**
 2. Select **Libraries > Classpath > Add External JARs…**
@@ -35,7 +35,7 @@ Same steps as Lab 8, Exercise 1:
 The project should now show **Referenced Libraries > jssc-2.9.6.jar**, and no file should have a red **X**.
 
 ## 4. Find the XBee Explorer's COM port
-1. Plug the XBee Explorer (with 22 RX) into the PC.
+1. Plug the XBee Explorer (with RX) into the PC.
 2. Open **Device Manager > Ports (COM & LPT)**, or **Arduino IDE > Tools > Port**, and note the port, e.g. `COM7`.
 3. **Close the Arduino Serial Monitor** if it's open on that port. Only one program can use a COM port at a time.
 

@@ -5,7 +5,7 @@ The Java program on the PC that receives the two guns' messages over ZigBee, run
 ```
 java/
   src/   all the Java source files (default package)
-  lib/   jssc-2.9.6.jar – the serial port library (same as Lab 8)
+  lib/   jssc-2.9.6.jar – the serial port library 
 ```
 
 ## Requirements

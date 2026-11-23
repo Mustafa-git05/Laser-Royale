@@ -55,15 +55,14 @@ const int LOW_HEALTH = 3;              // green LED blinks at or below this
 
 const int MAGAZINE_SIZE = 6;           // blasts per magazine
 const unsigned long RELOAD_MIN_MS = 2000;   // magazine must stay out this long
-// true once the reflective sensor is wired. false = no sensor yet, the
-// 'r' key in the Serial Monitor pretends to pull / insert the magazine.
-const bool RELOAD_SENSOR_FITTED = true;
+const bool RELOAD_SENSOR_FITTED = true; //to inform the prgoram that there is a a magzine 
+
 // Level on the sensor OUT pin when the magazine (white patch) is in front
 // of it. TCRT5000 modules give LOW when they see a reflection (D1 LED on).
 // Test4_Reload tells you which level your module gives.
 const int MAGAZINE_IN_LEVEL = LOW;
 
-const uint8_t IR_POWER_PERCENT = 33;   // 38 kHz duty: 10 = weak, 50 = strongest
+const uint8_t IR_POWER_PERCENT = 33;   
 const uint8_t COPIES_PER_SHOT = 3;     // each blast is sent 3 times so at least one gets through
 const unsigned long FIRE_COOLDOWN_MS = 250;   // minimum time between two blasts
 const unsigned long STATUS_PERIOD_MS = 1000;  // send the status to the PC every second
@@ -85,7 +84,7 @@ const uint8_t PIN_XBEE_TX = 11;        // Uno sends on D11 (to XBee rx)
 const uint8_t PIN_RELOAD = 12;         // reload sensor OUT
 
 // =====================================================================
-// FEEDBACK DEVICES  (interface from the Phase 2 class diagram)
+// FEEDBACK DEVICES  
 // Every device gets the same calls, PlayerNode does not need to know
 // which device is which. update() runs timed effects without delay().
 // =====================================================================
@@ -108,7 +107,7 @@ public:
 // ---------- green + red LED ----------
 class StatusLed : public FeedbackDevice {
   uint8_t greenPin, redPin;                  // the two LED pins
-  int health = 1, maxHealth = 1;             // last health we were told about
+  int health = 1, maxHealth = 1;             // ignore: for tests
   bool won = false, gameOver = false, reloading = false;   // current game situation
   unsigned long flashUntil = 0;              // time (ms) until which the red flash stays on
 public:
@@ -282,7 +281,7 @@ public:
   void begin() override {
     pinMode(pin, INPUT);                     // button is an input
     delay(50);                               // let the pin settle
-    idleLevel = digitalRead(pin);            // don't press the trigger while the gun starts
+    idleLevel = digitalRead(pin);            // reads its level while the button is not being pressed
   }
   // true once for each press (with 30 ms debounce)
   bool isTriggered() override {
@@ -315,7 +314,7 @@ public:
   }
   // direct reading: true = magazine in
   bool readRaw() {
-    if (!RELOAD_SENSOR_FITTED) return virtualIn;    // no sensor: use the fake one
+    if (!RELOAD_SENSOR_FITTED) return virtualIn;    // no sensor: use the fake one(for testing purposes only)
     return digitalRead(pin) == MAGAZINE_IN_LEVEL;   // sensor level = "magazine in" level
   }
   bool isMagazineIn() { return magazineIn; }       // confirmed magazine state
@@ -356,7 +355,7 @@ public:
   }
   bool isIdle() { return IrReceiver.isIdle(); }   // true when no frame is arriving right now
   uint8_t getShooter() { return shooter; }
-  unsigned int getNoiseFrames() { return noiseFrames; }
+  unsigned int getNoiseFrames() { return noiseFrames; }//for test
 
   // true if a NEW blast from the other player arrived
   bool isTriggered() override {
